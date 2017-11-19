@@ -1,3 +1,16 @@
 #!/bin/bash
+set -euo pipefail
+
+# create htpasswd file if not present, but wanted
+if [ ! -e /etc/httpd/conf/riot-web-htpasswd -a -n "${RIOT_WEB_HTPASSWD:-}" ]; then
+    echo "$RIOT_WEB_HTPASSWD" > /etc/httpd/conf/riot-web-htpasswd
+fi
+
+# set auth mode for the riot web
+if [ -e /etc/httpd/conf/riot-web-htpasswd ]; then
+    export RIOT_WEB_AUTH_REQUIRE="valid-user"
+else
+    export RIOT_WEB_AUTH_REQUIRE="all granted"
+fi
 
 exec httpd -DFOREGROUND
