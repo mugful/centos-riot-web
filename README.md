@@ -15,11 +15,12 @@ Configure
 
 The container is pre-configured with very basic httpd serving the Riot
 client via HTTP. It is recommended to *not* expose it directly to the
-internet. Either preface it with a https proxy when using it, and
-ideally something like HTTP Basic auth to only serve it to your target
-users. Or you can mount custom `/etc/httpd/conf/httpd.conf`, keys, and
-certificates to make the container serve Riot via proper HTTPS with
-your desired httpd configuration.
+internet. Either preface it with a https proxy when using it, and you
+might also want something like HTTP Basic auth to only serve it to
+your target users. Or you can mount custom
+`/etc/httpd/conf/httpd.conf` file, keys, and certificates to make the
+container serve Riot via proper HTTPS with your desired httpd
+configuration.
 
 It is also recommended to override
 `/var/www/html/riot-web/config.json` via a mount. See
