@@ -36,4 +36,4 @@ reverse proxy in front of it.
     docker run -d \
         --name my_riot \
         -p 127.0.0.1:8080:80 \
-        dockingbay/fedora-synapse
+        dockingbay/centos-riot-web
