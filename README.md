@@ -3,12 +3,18 @@ centos-riot-web
 
 A Riot-web Matrix client image built on top of CentOS.
 
-Build
------
+Pull
+----
 
-    git clone https://github.com/dockingbay/centos-riot-web
+Either pull from Quay.io:
+
+    docker pull quay.io/mugful/centos-riot-web:master
+
+Or build your own:
+
+    git clone https://github.com/mugful/centos-riot-web
     cd centos-riot-web
-    docker build --force-rm -t dockingbay/centos-riot-web:latest .
+    docker build --force-rm -t mugful/centos-riot-web:master .
 
 Configure
 ---------
@@ -37,4 +43,4 @@ reverse proxy in front of it.
     docker run -d \
         --name my_riot \
         -p 127.0.0.1:8080:80 \
-        dockingbay/centos-riot-web
+        quay.io/mugful/centos-riot-web:master
