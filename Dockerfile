@@ -8,4 +8,4 @@ RUN /root/build.sh
 
 COPY files /
 
-CMD ["/usr/local/bin/container-riot-web"]
+CMD ["/usr/local/bin/container-element-web"]
