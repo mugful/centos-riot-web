@@ -1,4 +1,4 @@
-FROM centos:7
+FROM quay.io/centos/centos:7
 MAINTAINER Jiri Stransky <jistr@jistr.com>
 
 RUN yum clean expire-cache && yum -y update && yum clean all
