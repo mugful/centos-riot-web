@@ -1,7 +1,7 @@
-FROM quay.io/centos/centos:7
+FROM quay.io/centos/centos:stream8
 MAINTAINER Jiri Stransky <jistr@jistr.com>
 
-RUN yum clean expire-cache && yum -y update && yum clean all
+RUN dnf clean expire-cache && dnf -y update && dnf clean all
 
 COPY build.sh /root/build.sh
 RUN /root/build.sh

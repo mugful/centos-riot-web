@@ -2,9 +2,9 @@
 
 set -euxo pipefail
 
-yum -y install epel-release
-yum -y install jq httpd
-yum clean all
+dnf -y install epel-release
+dnf -y install jq httpd
+dnf clean all
 
 
 RELEASE_ARCHIVE=$(curl -s https://api.github.com/repos/vector-im/element-web/releases/latest | jq -r '.assets | map(.browser_download_url | select(test("tar.gz$")))[0]')
