@@ -7,7 +7,7 @@ dnf -y install jq httpd
 dnf clean all
 
 
-RELEASE_ARCHIVE=$(curl -s https://api.github.com/repos/vector-im/element-web/releases/latest | jq -r '.assets | map(.browser_download_url | select(test("tar.gz$")))[0]')
+RELEASE_ARCHIVE=$(curl -Ls https://api.github.com/repos/vector-im/element-web/releases/latest | jq -r '.assets | map(.browser_download_url | select(test("tar.gz$")))[0]')
 LOCAL_ARCHIVE=/tmp/element-web.tar.gz
 ELEMENT_PATH=/var/www/html/element-web
 
