@@ -2,7 +2,6 @@
 
 set -euxo pipefail
 
-dnf -y install epel-release
 dnf -y install jq httpd
 dnf clean all
 
